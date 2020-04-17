@@ -64,7 +64,7 @@ for mode in all_times:
                                                         pixelated=False,
                                                         colormap=plt.get_cmap('viridis'),
                                                         zindex=1,
-                                                        show=mode=='transit')
+                                                        show=mode=='bicycling')
     heatmaps.append(current_heatmap)
 
     # Create colormap
