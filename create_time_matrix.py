@@ -14,9 +14,9 @@ home_coords = tuple(configs['home_coords'])
 grid_size = configs['grid_size']
 max_extent = configs['max_extent']
 
-gmaps_api = googlemaps.Client(key=API_KEY)
-
 modes = ['driving', 'walking', 'bicycling', 'transit']
+
+gmaps_api = googlemaps.Client(key=API_KEY)
 
 # set up destinations
 grid_size = grid_size + grid_size % 5
