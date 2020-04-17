@@ -17,7 +17,7 @@ for mode in all_times:
 
     # filter extreme values
     if configs['max_time'] == -1:
-        max_time = np.quantile(all_times[mode], 0.99)
+        max_time = np.quantile(all_times[mode], configs['max_ratio'])
     else:
         max_time = configs['max_time']
     all_times[mode][all_times[mode] > max_time] = max_time

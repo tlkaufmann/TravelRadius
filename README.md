@@ -12,7 +12,8 @@ The script can easily be used for any location by simply adjusting the values in
 
 ## Next steps
 - [x] Implement the four different modes (walking, biking, driving and transit)
-- [ ] Add colorbar
+- [x] Add colorbar
+- [ ] Make the different modes mutually exclusive in the Layerselection (see [this plugin](https://github.com/ismyrnow/leaflet-groupedlayercontrol))
 - [ ] Create nicer folder structure and a `setup.py` file
 - [ ] Create a clustering of points similar to Sebastian Strug (see below)
 
