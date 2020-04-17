@@ -4,5 +4,13 @@
     13.376656
   ],
   "grid_size":
-    100
+    100,
+  "max_extent":
+    0.15,
+  "display_sizes": [
+    1.0,
+    1.0
+  ],
+  "max_time": -1,
+  "missing_points": "max"
 }

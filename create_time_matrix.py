@@ -7,19 +7,21 @@ from tqdm import tqdm
 
 with open('API_KEY.txt', 'r') as f:
     API_KEY = f.read()
+
 with open('configs.json', 'r') as f:
     configs = json.load(f)
 home_coords = tuple(configs['home_coords'])
+grid_size = configs['grid_size']
+max_extent = configs['max_extent']
 
 gmaps_api = googlemaps.Client(key=API_KEY)
 
-modes = ['driving', 'walking', 'bicycling']  # transit?
+modes = ['driving', 'walking', 'bicycling', 'transit']
 
 # set up destinations
-grid_size = configs['grid_size']
 grid_size = grid_size + grid_size % 5
-longs = home_coords[0] + np.linspace(-0.15, 0.15, grid_size)
-lats = home_coords[1] + np.linspace(-0.15, 0.15, grid_size)
+longs = home_coords[0] + np.linspace(-max_extent, max_extent, grid_size)
+lats = home_coords[1] + np.linspace(-max_extent, max_extent, grid_size)
 destinations = np.reshape(np.array(np.meshgrid(longs, lats)), (2, -1)).T
 destinations = list(map(tuple, destinations))
 nr_batches = int(np.ceil(len(destinations) / 25))
@@ -43,4 +45,4 @@ for mode in modes:
     cur_times = np.reshape(cur_times, (grid_size, grid_size))
     all_times[mode] = cur_times
 
-    pickle.dump(all_times, open('all_times.p', 'wb'))
+pickle.dump(all_times, open('data/all_times.p', 'wb'))
