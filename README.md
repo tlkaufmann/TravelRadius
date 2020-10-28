@@ -3,7 +3,7 @@
 Create a map that displays the travel time around my home.
 Uses the *Google Distance Matrix API* to compute the actual travel times and `folium` to display the results.
 
-[Link to the interactive map](https://tomkau93.github.io/TravelRadius/index)
+[Link to the interactive map](https://tlkaufmann.github.io/TravelRadius/index)
 
 ## Setup
 You need an API Key for the [Google Distance Matrix API](https://developers.google.com/maps/documentation/distance-matrix/start) and place it in the file `API_key.txt`. 
